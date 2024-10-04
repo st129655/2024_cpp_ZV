@@ -1,20 +1,19 @@
-
 #include <iostream>
 
 int main(int argc, char* argv[])
 {
-    int H = 0;
-    int A = 0;
-    int B = 0;
+    int h = 0;
+    int a = 0;
+    int b = 0;
     int day = 0;
-    scanf_s("%d", &H);
-    scanf_s("%d", &A);
-    scanf_s("%d", &B);
-    H = H + (((A - B) - H % (A - B)) % (A - B));
-    H = (H - A) * ((H / A) - ((H - A) / A));
+    scanf_s("%d", &h);
+    scanf_s("%d", &a);
+    scanf_s("%d", &b);
+    h = h + (((a - b) - h % (a - b)) % (a - b));
+    h = (h - a) * ((h / a) - ((h - a) / a));
     day++;
-    H = H + (((A - B) - H % (A - B)) % (A - B));
-    day += H / (A - B);
+    h = h + (((a - b) - h % (a - b)) % (a - b));
+    day += h / (a - b);
     printf("%d", day);
     return EXIT_SUCCESS;
 }
