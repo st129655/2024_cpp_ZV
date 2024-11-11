@@ -1,18 +1,23 @@
 #include<iostream>
-int gcd(int a, int b) {
-	if (b == 0)
-		return a;
-	return gcd(b, a % b);
-}
 int main(int argc, char* argv[]) {
 	int n = 0;
 	int m = 0;
 	int z = 1;
-	int c = 1;
-	int nod = 1;
 	scanf_s("%d", &n);
 	scanf_s("%d", &m);
-	nod = gcd(m, n);
+	if (m > n)
+	{
+		int c = m;
+		m = n;
+		n = c;
+	}
+	while (m * n != 0)
+	{
+		int c = n % m;
+		n = m;
+		m = c;
+	}
+	int nod = n + m;
 	if (m < n) {
 		z = n / nod;
 	}
